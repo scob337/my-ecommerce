@@ -5,13 +5,13 @@ const Footer: React.FC = () => {
 
 
         <footer className="bg-white dark:bg-gray-900">
-            <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div className="md:flex md:justify-between">
-                    <div className="mb-6 md:mb-0">
+            <article className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <article className="md:flex md:justify-between">
+                    <article className="mb-6 md:mb-0">
                         <img src="https://preview.colorlib.com/theme/ashion/img/logo.png.webp" className="h-8 me-3" alt="FlowBite Logo" />
-                    </div>
-                    <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                        <div>
+                    </article>
+                    <article className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                        <article>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Quick links
                             </h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -25,8 +25,8 @@ const Footer: React.FC = () => {
                                     <a href="#" className="hover:underline">FAQ</a>
                                 </li>
                             </ul>
-                        </div>
-                        <div>
+                        </article>
+                        <article>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Account</h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
@@ -42,10 +42,10 @@ const Footer: React.FC = () => {
                                     <a href="#" className="hover:underline">Wishlist</a>
                                 </li>
                             </ul>
-                        </div>
-                        <div>
+                        </article>
+                        <article>
 
-                            <div className='w-[90vw]  md:w-full'>
+                            <article className='w-[90vw]  md:w-full'>
                                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">NEWSLETTER
                                 </h2>
                                 <ul className="text-gray-500 dark:text-gray-400 font-medium w-full">
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                                     </li>
 
                                 </ul>
-                                <div className="flex mt-4 sm:justify-center sm:mt-0">
+                                <article className="flex mt-4 sm:justify-center sm:mt-0">
                                     <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                                         <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                                             <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd" />
@@ -86,19 +86,19 @@ const Footer: React.FC = () => {
                                         </svg>
                                         <span className="sr-only">Dribbble account</span>
                                     </a>
-                                </div>
-                            </div>
+                                </article>
+                            </article>
 
-                        </div>
-                    </div>
-                </div>
+                        </article>
+                    </article>
+                </article>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-                <div className="sm:flex sm:items-center sm:justify-between">
+                <article className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Abd El-tawab Sha`ban</a>. All Rights Reserved.
                     </span>
 
-                </div>
-            </div>
+                </article>
+            </article>
         </footer>
 
     );

@@ -15,7 +15,7 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ title, items }) => {
     return (
-        <div className="flex flex-col gap-3">
+        <article className="flex flex-col gap-3">
             <h1 className="Hot-Title">{title}</h1>
             {items.map((item) => (
                 <HotCard
@@ -25,7 +25,7 @@ const ProductList: React.FC<ProductListProps> = ({ title, items }) => {
                     Price={item.price}
                 />
             ))}
-        </div>
+        </article>
     );
 };
 

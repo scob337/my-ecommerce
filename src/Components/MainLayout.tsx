@@ -4,10 +4,10 @@ import Footer from "./Footer/Footer";
 
 export default function MainLayout() {
     return (
-        <div className="w-full min-h-fit">
+        <article className="w-full min-h-fit">
             <NavBar />
             <Outlet />
-            <Footer/>
-        </div>
+            <Footer />
+        </article>
     )
 }

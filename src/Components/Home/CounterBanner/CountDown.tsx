@@ -33,24 +33,24 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
     }, [targetDate]);
 
     return (
-        <div className="flex space-x-4 text-center text-gray-800 gap-2">
-            <div className='flex items-center gap-1'>
+        <article className="flex space-x-4 text-center text-gray-800 gap-2">
+            <article className='flex items-center gap-1'>
                 <span className="block text-2xl font-bold ">{timeLeft.days}</span>
                 <span>Day</span>
-            </div>
-            <div className='flex items-center gap-1'>
+            </article>
+            <article className='flex items-center gap-1'>
                 <span className="block text-2xl font-bold ">{timeLeft.hours}</span>
                 <span>Hour</span>
-            </div>
-            <div className='flex items-center gap-1'>
+            </article>
+            <article className='flex items-center gap-1'>
                 <span className="block text-2xl font-bold ">{timeLeft.minutes}</span>
                 <span>Min</span>
-            </div>
-            <div className='flex items-center gap-1'>
+            </article>
+            <article className='flex items-center gap-1'>
                 <span className="block text-2xl font-bold ">{timeLeft.seconds}</span>
                 <span>Sec</span>
-            </div>
-        </div>
+            </article>
+        </article>
     );
 };
 

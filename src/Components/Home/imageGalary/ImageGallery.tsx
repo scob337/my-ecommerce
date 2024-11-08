@@ -13,21 +13,21 @@ const images = [
 
 const ImageGallery: React.FC = () => {
     return (
-        <div className="grid grid-cols-3 gap-4 p-6 h-[60vh]">
+        <article className="grid grid-cols-3 gap-4 p-6 h-[60vh]">
             {images.map((src, index) => (
-                <div key={index} className="overflow-hidden relative group h-full">
+                <article key={index} className="overflow-hidden relative group h-full">
                     <img
                         src={src}
                         alt={`Gallery ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 "
                     />
-                    <div className="absolute bottom-0 left-0 bg-gray-800 bg-opacity-90 w-full h-full flex justify-center items-center text-white text-lg font-bold transition-opacity duration-500 opacity-0 group-hover:opacity-100 cursor-pointer  flex-col">
+                    <article className="absolute bottom-0 left-0 bg-gray-800 bg-opacity-90 w-full h-full flex justify-center items-center text-white text-lg font-bold transition-opacity duration-500 opacity-0 group-hover:opacity-100 cursor-pointer  flex-col">
                         <FaInstagram size={29} />
                         <p>Follow us on Instagram</p>
-                    </div>
-                </div>
+                    </article>
+                </article>
             ))}
-        </div>
+        </article>
     );
 };
 
