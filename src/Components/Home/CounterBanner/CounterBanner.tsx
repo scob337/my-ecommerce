@@ -11,6 +11,7 @@ const CounterBanner: React.FC = () => {
                     src="https://preview.colorlib.com/theme/ashion/img/discount.jpg"
                     alt="Offer Image"
                     className="w-full rounded-lg"
+                    loading="lazy"
                 />
             </article>
             <article className="w-full md:w-1/2 mt-8 md:mt-0 md:ml-8 flex flex-col justify-center items-center md:items-start text-center md:text-left gap-4">

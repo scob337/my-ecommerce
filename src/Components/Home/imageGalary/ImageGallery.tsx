@@ -20,6 +20,7 @@ const ImageGallery: React.FC = () => {
                         src={src}
                         alt={`Gallery ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 "
+                        loading="lazy"
                     />
                     <article className="absolute bottom-0 left-0 bg-gray-800 bg-opacity-90 w-full h-full flex justify-center items-center text-white text-lg font-bold transition-opacity duration-500 opacity-0 group-hover:opacity-100 cursor-pointer  flex-col">
                         <FaInstagram size={29} />

@@ -38,7 +38,7 @@ export default function MainCard({ FilterValue }: I_props) {
                             ${isVisible ? "scale-100 opacity-100 relative" : "scale-0 opacity-0 absolute"}`}
                     >
                         <article className="img w-full h-[50%] group overflow-hidden">
-                            <img src={el.img} alt="Test" className="h-full w-full object-cover group-hover:scale-110 transition-all duration-500 " />
+                            <img src={el.img} alt="Test" className="h-full w-full object-cover group-hover:scale-110 transition-all duration-500 " loading='lazy' />
                         </article>
 
                         <p>{el.desc}</p>

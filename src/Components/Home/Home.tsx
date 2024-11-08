@@ -7,14 +7,14 @@ import ImageGallery from './imageGalary/ImageGallery'
 import ServiceFeatures from './ServiceFuture/ServiceFeatures'
 export default function Home() {
   return (
-    <article className="h-fit ">
+    <section accessKey='Home' className="h-fit" aria-description='Section Home'>
       <Banner />
       <Filter />
       <Slide />
       <HotCollection />
       <CounterBanner />
       <ServiceFeatures />
-      <ImageGallery/>
-    </article>
+      <ImageGallery />
+    </section>
   )
 }

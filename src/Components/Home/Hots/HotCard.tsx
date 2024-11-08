@@ -19,6 +19,7 @@ export default function HotCard(props: Iprops) {
                     src={IMG}
                     alt="Placeholder"
                     className="w-full h-full object-cover"
+                    loading='lazy'
                 />
             </article>
             <article className="text flex flex-col  justify-between p-1">
