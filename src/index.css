@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.Hot-Title{
+    @apply text-2xl font-bold;
+    width: 300px;
+    position: relative;
+    @apply py-2;
+    text-transform: uppercase;
+}
+.Hot-Title::after{
+    @apply absolute;
+    @apply bottom-0;
+    @apply left-0;
+    @apply w-full;
+    @apply h-1;
+    @apply bg-red-600;
+    content: "";
+    width: 20%;
+}
