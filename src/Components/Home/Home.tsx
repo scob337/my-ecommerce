@@ -1,5 +1,6 @@
 import Banner from './Banner/Banner'
 import Slide from './CollectionSwiper/Swiper'
+import CounterBanner from './CounterBanner/CounterBanner'
 import Filter from './Filters/Filter'
 import HotCollection from './Hots/HotCollection'
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Filter />
       <Slide />
       <HotCollection />
+      <CounterBanner/>
     </article>
   )
 }

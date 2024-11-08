@@ -19,11 +19,18 @@ interface I_props {
 }
 
 export default function MainCard({ FilterValue }: I_props) {
+
+    const visibleProducts = Products.filter((el: elData) =>
+        FilterValue.title === "All" || FilterValue.category === el.category
+    );
+
     return (
         <div className="flex flex-wrap gap-4 justify-center w-full">
+            {visibleProducts.length === 0 && <p className='
+            text-center text-xl font-medium  transition-all  p-2 text-white duration-700 bg-red-500 
+            '>There's no data</p>}
             {Products.map((el: elData) => {
                 const isVisible = FilterValue.title === "All" || FilterValue.category === el.category;
-
                 return (
                     <div
                         key={el.id}
