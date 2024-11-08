@@ -3,6 +3,8 @@ import Slide from './CollectionSwiper/Swiper'
 import CounterBanner from './CounterBanner/CounterBanner'
 import Filter from './Filters/Filter'
 import HotCollection from './Hots/HotCollection'
+import ImageGallery from './imageGalary/ImageGallery'
+import ServiceFeatures from './ServiceFuture/ServiceFeatures'
 export default function Home() {
   return (
     <article className="h-fit ">
@@ -10,7 +12,9 @@ export default function Home() {
       <Filter />
       <Slide />
       <HotCollection />
-      <CounterBanner/>
+      <CounterBanner />
+      <ServiceFeatures />
+      <ImageGallery/>
     </article>
   )
 }

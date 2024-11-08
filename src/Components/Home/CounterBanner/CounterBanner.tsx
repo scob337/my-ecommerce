@@ -15,7 +15,7 @@ const CounterBanner: React.FC = () => {
             </div>
             <div className="w-full md:w-1/2 mt-8 md:mt-0 md:ml-8 flex flex-col justify-center items-center md:items-start text-center md:text-left gap-4">
                 <h3 className="text-lg font-semibold text-gray-600">DISCOUNT</h3>
-                <h1 className="text-4xl font-bold text-red-600 mt-2 summer">Summer 2023</h1>
+                <h1 className="text-4xl font-bold text-red-600 mt-2 summer">Summer 2024</h1>
                 <p className="text-lg font-semibold mt-2">
                     SALE <span className="text-red-600">50%</span>
                 </p>
