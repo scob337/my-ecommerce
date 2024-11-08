@@ -9,7 +9,7 @@ export default function NavBar() {
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
                 <article className="max-w-screen-xl flex flex-col lg:flex-row items-center justify-between mx-auto p-4">
                     <article className="logo lg:w-[20vw] flex justify-between items-center w-full">
-                        <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
                             <img src="https://preview.colorlib.com/theme/ashion/img/logo.png.webp" className="h-8" alt="Logo" />
                         </a>
                         <button
