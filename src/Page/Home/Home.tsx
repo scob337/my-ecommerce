@@ -4,10 +4,12 @@ import CounterBanner from './CounterBanner/CounterBanner'
 import Filter from './Filters/Filter'
 import HotCollection from './Hots/HotCollection'
 import ImageGallery from './imageGalary/ImageGallery'
+import Search from './SearchPage/Search'
 import ServiceFeatures from './ServiceFuture/ServiceFeatures'
 export default function Home() {
+  
   return (
-    <section accessKey='Home' className="h-fit" aria-description='Section Home'>
+    <section accessKey='Home' className="h-fit relative" aria-description='Section Home'>
       <Banner />
       <Filter />
       <Slide />
@@ -15,6 +17,7 @@ export default function Home() {
       <CounterBanner />
       <ServiceFeatures />
       <ImageGallery />
+      <Search />
     </section>
   )
 }

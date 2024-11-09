@@ -33,7 +33,7 @@ export default function NavBar() {
                         <ul className="font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-white lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 dark:bg-gray-800 dark:border-gray-700">
                             {Links()}
                         </ul>
-                        <article className="mt-4 lg:mt-0">{IconNav}</article>
+                        <article className="mt-4 lg:mt-0">{IconNav()}</article>
                     </article>
                 </article>
             </nav>

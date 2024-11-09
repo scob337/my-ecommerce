@@ -1,5 +1,8 @@
 import { FaSearch, FaRegHeart, FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
+import { Opentoggle } from "../../RTK/ToggleSlice";
+import { useDispatch } from "react-redux";
+import React from 'react';
 
 interface ILinks {
     id: number;
@@ -18,7 +21,6 @@ const LinksData: ILinks[] = [
 ];
 
 export const Links = () => {
-
     const location = useLocation();
 
     return (
@@ -48,17 +50,25 @@ export const Links = () => {
     );
 }
 
-export const IconNav = (
-    <ul className="flex justify-evenly items-center gap-5 mt-3 lg:mt-0 text-gray-600 dark:text-gray-400">
-        <li className="font-semibold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-105">Login / Register</li>
-        <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
-            <FaSearch />
-        </li>
-        <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
-            <FaRegHeart />
-        </li>
-        <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
-            <FaShoppingCart />
-        </li>
-    </ul>
-);
+export const IconNav = () => {
+    const dispatch = useDispatch();
+
+    return (
+        <ul className="flex justify-evenly items-center gap-5 mt-3 lg:mt-0 text-gray-600 dark:text-gray-400">
+            <li className="font-semibold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-105">
+                Login / Register
+            </li>
+            <li
+                onClick={() => dispatch(Opentoggle(true))}
+                className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
+                <FaSearch />
+            </li>
+            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
+                <FaRegHeart />
+            </li>
+            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
+                <FaShoppingCart />
+            </li>
+        </ul>
+    );
+};
