@@ -1,6 +1,4 @@
-Here's an English version of the description, with an added section for a demo link:
 
----
 
 **Project Description:**
 
