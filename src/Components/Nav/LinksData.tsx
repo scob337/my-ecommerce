@@ -2,7 +2,6 @@ import { FaSearch, FaRegHeart, FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
 import { Opentoggle } from "../../RTK/ToggleSlice";
 import { useDispatch } from "react-redux";
-import React from 'react';
 
 interface ILinks {
     id: number;
