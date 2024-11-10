@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux'
 import ProductDetails from './ProductDetails'
 import { RootState } from '../../RTK/store';
+import ImageGallery from '../Home/imageGalary/ImageGallery';
+import MainCard from '../Home/ProductsCard/MainCard';
 
 const ProductPage = () => {
 
@@ -19,6 +21,10 @@ const ProductPage = () => {
                 sellerName="John Doe"
                 sellerImage="https://randomuser.me/api/portraits/men/1.jpg"
             />
+            <h2 className="text-3xl font-bold mb-4 p-2 text-center"> Related Products</h2>
+            <MainCard />
+
+            <ImageGallery />
         </div>
     )
 }

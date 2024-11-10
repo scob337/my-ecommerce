@@ -17,18 +17,18 @@ interface elData {
 }
 
 interface I_props {
-    FilterValue: {
+    FilterValue?: {
         title: string;
         category: string;
     }
 }
 
-export default function MainCard({ FilterValue }: I_props) {
+export default function MainCard({ FilterValue = { title: "All", category: "All" } }: I_props) {
 
     const dispatch = useDispatch();
 
     const visibleProducts = Products.filter((el: elData) =>
-        FilterValue.title === "All" || FilterValue.category === el.category
+        FilterValue?.title === "All" || FilterValue?.category === el.category
     );
 
     return (
@@ -37,7 +37,7 @@ export default function MainCard({ FilterValue }: I_props) {
             text-center text-xl font-medium  transition-all  p-2 text-white duration-700 bg-red-500 
             '>There's no data</p>}
             {Products.map((el: elData) => {
-                const isVisible = FilterValue.title === "All" || FilterValue.category === el.category;
+                const isVisible = FilterValue?.title === "All" || FilterValue?.category === el.category;
                 return (
                     <article
                         key={el.id}
@@ -59,7 +59,7 @@ export default function MainCard({ FilterValue }: I_props) {
                     </article>
                 );
             })}
-            
+
         </article>
     );
 }

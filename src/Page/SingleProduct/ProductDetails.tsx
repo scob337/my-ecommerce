@@ -134,7 +134,7 @@ const ProductDetails: React.FC<ProductProps> = ({
             </div>
 
             <div className="mt-8">
-              <h3 className="text-xl font-semibold text-white">About the coffee</h3>
+              <h3 className="text-xl font-semibold text-white">About the {title}</h3>
               <ul className="space-y-3 list-disc mt-4 pl-4 text-sm text-white">
                 {description.map((item, index) => (
                   <li key={index}>{item}</li>
