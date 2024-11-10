@@ -59,6 +59,7 @@ export default function MainCard({ FilterValue }: I_props) {
                     </article>
                 );
             })}
+            
         </article>
     );
 }
