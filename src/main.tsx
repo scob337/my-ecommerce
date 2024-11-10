@@ -6,6 +6,7 @@ import Home from './Page/Home/Home.tsx'
 import MainLayout from './Components/MainLayout.tsx'
 import { Provider } from 'react-redux'
 import store from './RTK/store.ts'
+import ProductPage from './Page/SingleProduct/ProductPage.tsx'
 const route = createBrowserRouter([
   {
     path: '/',
@@ -15,7 +16,10 @@ const route = createBrowserRouter([
         path: '/',
         element: <Home />,
       },
-
+      {
+        path: '/product/:id',
+        element: <ProductPage />,
+      },
     ]
   },
 ])

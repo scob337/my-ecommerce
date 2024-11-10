@@ -1,3 +1,4 @@
+
 import Banner from './Banner/Banner'
 import Slide from './CollectionSwiper/Swiper'
 import CounterBanner from './CounterBanner/CounterBanner'
@@ -18,6 +19,8 @@ export default function Home() {
       <ServiceFeatures />
       <ImageGallery />
       <Search />
+
+    
     </section>
   )
 }
