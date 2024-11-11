@@ -5,7 +5,6 @@ import CounterBanner from './CounterBanner/CounterBanner'
 import Filter from './Filters/Filter'
 import HotCollection from './Hots/HotCollection'
 import ImageGallery from './imageGalary/ImageGallery'
-import Search from './SearchPage/Search'
 import ServiceFeatures from './ServiceFuture/ServiceFeatures'
 export default function Home() {
   
@@ -18,7 +17,7 @@ export default function Home() {
       <CounterBanner />
       <ServiceFeatures />
       <ImageGallery />
-      <Search />
+
 
     
     </section>
