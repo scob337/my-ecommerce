@@ -4,7 +4,6 @@ import { Opentoggle } from "../../RTK/ToggleSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../RTK/store";
 
-// تعريف نوع البيانات للروابط
 interface ILinks {
     id: number;
     name: string;
@@ -24,10 +23,6 @@ const LinksData: ILinks[] = [
 export const Links = () => {
     const location = useLocation();
 
-    const { ShopCard, WishCard } = useSelector((state: RootState) => ({
-        ShopCard: state.ShopCard,
-        WishCard: state.WishCard
-    }));
 
     return (
         <ul className="flex flex-wrap justify-center space-x-4 md:space-x-6 lg:space-x-8">

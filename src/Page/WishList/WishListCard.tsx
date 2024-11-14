@@ -7,7 +7,7 @@ interface IProps {
     title: string;
     price: number;
     id: number;
-
+    Product: { id: number; title: string; price: number; img: string };
 }
 const WishListCard = (props: IProps) => {
     const { img, title, price, id } = props;
