@@ -39,10 +39,11 @@ const ShoppingCart: React.FC = () => {
 												image={product.img}
 											/>
 										);
-									}) : null}
+									}) : ""}
 								</tbody>
 							</table>
 						</div>
+						{!ShopCard.length && <p className="p-2 text-center font-bold h-[300px] flex items-center justify-center">No data found</p>}
 
 						<div className="flex flex-col w-full mt-4">
 							<div className="flex gap-4">

@@ -20,9 +20,9 @@ const LinksData: ILinks[] = [
     { id: 5, name: "Contact", link: "#7" },
 ];
 
+// Component to display the navigation links
 export const Links = () => {
     const location = useLocation();
-
     const shopCard = useSelector((state: RootState) => state.ShopCard);
 
     return (
@@ -33,15 +33,15 @@ export const Links = () => {
                     <li
                         key={link.id}
                         className={`relative text-center pb-1 
-                                after:absolute after:content-[''] after:w-full after:h-[2px] after:bg-red-500 after:left-0 after:bottom-0
-                                after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:ease-in-out
-                                ${isActive ? "text-red-500 after:scale-x-100" : ""
-                            }`}>
+                            after:absolute after:content-[''] after:w-full after:h-[2px] after:bg-red-500 after:left-0 after:bottom-0
+                            after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:ease-in-out
+                            ${isActive ? "text-red-500 after:scale-x-100" : ""}
+                        `}>
                         <Link
                             to={link.link}
                             className={`block py-2 px-3 rounded-md md:bg-transparent md:p-0 dark:text-white 
-                                transition-transform duration-500 ease-in-out hover:scale-105 ${isActive ? "text-red-500" : ""
-                                }`}>
+                                transition-transform duration-500 ease-in-out hover:scale-105 ${isActive ? "text-red-500" : ""}
+                            `}>
                             {link.name}
                         </Link>
                     </li>
@@ -57,21 +57,25 @@ export const IconNav = () => {
 
     return (
         <ul className="flex justify-evenly items-center px-2 gap-5 mt-3 lg:mt-0 text-gray-600 dark:text-gray-400">
-            <li className="font-semibold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-105">
+            <li className="font-semibold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500">
                 Login / Register
             </li>
+
             <li
                 onClick={() => dispatch(Opentoggle(true))}
-                className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
+                className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500"
+            >
                 <FaSearch size={20} />
             </li>
-            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
+
+            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500">
                 <FaRegHeart size={20} />
             </li>
-            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 hover:scale-110">
+
+            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500">
                 <NavLink to="/shopping" className="relative">
                     <FaShoppingCart size={20} />
-                    <span className="absolute top-[-20px] right-[-8px] bg-black text-red-500 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center">
+                    <span className="absolute top-[-19px] right-[-5px] bg-black text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">
                         {shopCard.length}
                     </span>
                 </NavLink>
