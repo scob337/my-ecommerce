@@ -4,6 +4,7 @@ import { Opentoggle } from "../../RTK/ToggleSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../RTK/store";
 
+// تعريف نوع البيانات للروابط
 interface ILinks {
     id: number;
     name: string;
@@ -20,15 +21,17 @@ const LinksData: ILinks[] = [
     { id: 5, name: "Contact", link: "#7" },
 ];
 
-// Component to display the navigation links
 export const Links = () => {
     const location = useLocation();
 
-    const shopCard = useSelector((state: RootState) => state.ShopCard);
+    const { ShopCard, WishCard } = useSelector((state: RootState) => ({
+        ShopCard: state.ShopCard,
+        WishCard: state.WishCard
+    }));
 
     return (
         <ul className="flex flex-wrap justify-center space-x-4 md:space-x-6 lg:space-x-8">
-            {LinksData.map((link: ILinks) => {
+            {LinksData.map((link) => {
                 const isActive = location.pathname === link.link;
                 return (
                     <li
@@ -36,13 +39,13 @@ export const Links = () => {
                         className={`relative text-center pb-1 
                             after:absolute after:content-[''] after:w-full after:h-[2px] after:bg-red-500 after:left-0 after:bottom-0
                             after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:ease-in-out
-                            ${isActive ? "text-red-500 after:scale-x-100" : ""}
-                        `}>
+                            ${isActive ? "text-red-500 after:scale-x-100" : ""}`}
+                    >
                         <Link
                             to={link.link}
                             className={`block py-2 px-3 rounded-md md:bg-transparent md:p-0 dark:text-white 
-                                transition-transform duration-500 ease-in-out hover:scale-105 ${isActive ? "text-red-500" : ""}
-                            `}>
+                                transition-transform duration-500 ease-in-out hover:scale-105 ${isActive ? "text-red-500" : ""}`}
+                        >
                             {link.name}
                         </Link>
                     </li>
@@ -54,7 +57,10 @@ export const Links = () => {
 
 export const IconNav = () => {
     const dispatch = useDispatch();
-    const shopCard = useSelector((state: RootState) => state.ShopCard);
+    const { ShopCard, WishCard } = useSelector((state: RootState) => ({
+        ShopCard: state.ShopCard,
+        WishCard: state.WishCard
+    }));
 
     return (
         <ul className="flex justify-evenly items-center px-2 gap-5 mt-3 lg:mt-0 text-gray-600 dark:text-gray-400">
@@ -69,18 +75,20 @@ export const IconNav = () => {
                 <FaSearch size={20} />
             </li>
 
-            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 relative ">
-                <FaRegHeart size={20} />
-                <span className="absolute top-[-19px] right-[-5px] bg-black text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                    {shopCard.length}
-                </span>
+            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 relative">
+                <NavLink to="/wishlist">
+                    <FaRegHeart size={20} />
+                    <span className="absolute top-[-19px] right-[-5px] bg-black text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                        {WishCard.length}
+                    </span>
+                </NavLink>
             </li>
 
             <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500">
                 <NavLink to="/shopping" className="relative">
                     <FaShoppingCart size={20} />
                     <span className="absolute top-[-19px] right-[-5px] bg-black text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                        {shopCard.length}
+                        {ShopCard.length}
                     </span>
                 </NavLink>
             </li>

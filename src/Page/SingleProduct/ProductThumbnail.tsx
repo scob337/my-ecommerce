@@ -3,7 +3,6 @@ import React from "react";
 interface ProductThumbnailProps {
     images: string[];
 }
-
 const ProductThumbnail: React.FC<ProductThumbnailProps> = ({ images }) => {
     return (
         <div className="mt-4 flex flex-wrap justify-center gap-4 mx-auto">

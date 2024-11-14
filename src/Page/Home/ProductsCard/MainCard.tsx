@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { GetProduct } from '../../../RTK/ProductSlice';
 import { addProduct } from '../../../RTK/ShopCardSlice';
+import { addWish } from '../../../RTK/WishList';
 
 interface elData {
     id: number;
@@ -30,13 +31,18 @@ export default function MainCard({ FilterValue = { title: "All", category: "All"
     const handleAddToCart = (item: elData) => {
         dispatch(addProduct(item));
     };
+    const handleAddToWish = (item: elData) => {
+        dispatch(addWish(item));
+    };
     const visibleProducts = Products.filter((el: elData) =>
         FilterValue?.title === "All" || FilterValue?.category === el.category
     );
     const HandleView = (Product: elData) => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
         dispatch(GetProduct(Product))
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
+    
     return (
         <article className="flex flex-wrap gap-4 justify-center w-full">
             {visibleProducts.length === 0 && <p className='
@@ -59,7 +65,12 @@ export default function MainCard({ FilterValue = { title: "All", category: "All"
                         <article className="absolute top-[37%] flex justify-center items-center gap-4 w-full h-[50px] overflow-hidden">
                             <NavLink to={`/product/${el.id}`} className="text-black flex justify-center items-center bg-white rounded-full p-1 h-[40px] w-[40px] absolute right-[70%] translate-y-[150%] group-hover:translate-y-0 cursor-pointer hover:text-white duration-300 hover:bg-red-500 hover:rotate-[360deg] transition-all "><LuMaximize2 size={24} onClick={() => HandleView(el)}
                             /> </NavLink>
-                            <p className="text-black flex justify-center items-center bg-white rounded-full p-1 h-[40px] w-[40px] absolute right-[50%] translate-y-[150%] group-hover:translate-y-0 cursor-pointer hover:text-white duration-500 hover:bg-red-500 hover:rotate-[360deg] transition-all "><CiHeart size={24} /></p>
+                            <p className="text-black flex justify-center items-center bg-white rounded-full p-1 h-[40px] w-[40px] absolute right-[50%] translate-y-[150%] group-hover:translate-y-0 cursor-pointer hover:text-white duration-500 hover:bg-red-500 hover:rotate-[360deg] transition-all "
+                                onClick={() => handleAddToWish(el)}
+                            >
+
+                                <CiHeart size={24} />
+                            </p>
                             <p className="text-black flex justify-center items-center bg-white rounded-full p-1 h-[40px] w-[40px] absolute right-[30%] translate-y-[150%] group-hover:translate-y-0 cursor-pointer hover:text-white duration-700 hover:bg-red-500 hover:rotate-[360deg] transition-all "
                                 onClick={() => handleAddToCart(el)}
                             ><CiShoppingCart size={24} /></p>

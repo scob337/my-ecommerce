@@ -17,11 +17,19 @@ const CheckOut: React.FC = () => {
                         Check your items. And select a suitable shipping method.
                     </p>
                     <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-                        <ProductCard
-                            img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o94CQVxy3SWj7Mygbij-o8JZCvZmgChyw&s"
-                            name="Shoes"
-                            price={100}
-                        />
+                        {ShopCard &&
+                            ShopCard.map((product) => {
+                                return (
+                                    <ProductCard
+                                        img={product.img}
+                                        name={product.title}
+                                        price={product.price}
+                                        quantity={product.qty}
+                                    />
+                                )
+                            })
+                        }
+
                     </div>
 
                     <p className="mt-8 text-lg font-medium">Shipping Methods</p>

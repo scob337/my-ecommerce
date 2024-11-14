@@ -4,13 +4,15 @@ export interface elData {
     id: number;
     img: string;
     title: string;
-    desc: string;
-    rate: string;
+    desc?: string;
+    rate?: string;
     price: number;
-    category: string;
-    imgCollection: string[];
+    category?: string;
+    imgCollection?: string[];
     qty: number;
+    
 }
+
 
 const initialState: elData[] = [];
 
@@ -22,7 +24,7 @@ const shopCardSlice = createSlice({
             const existingProduct = state.find(item => item.id === action.payload.id);
 
             if (existingProduct) {
-                existingProduct.qty += 1;
+                existingProduct.qty = (existingProduct.qty || 0) + 1;
             } else {
                 state.push({ ...action.payload, qty: 1 });
             }
@@ -32,7 +34,7 @@ const shopCardSlice = createSlice({
 
             if (index !== -1) {
                 const product = state[index];
-                if (product.qty > 1) {
+                if (product.qty && product.qty > 1) {
                     product.qty -= 1;
                 } else {
                     state.splice(index, 1);
@@ -45,25 +47,23 @@ const shopCardSlice = createSlice({
         increaseQty: (state, action: PayloadAction<number>) => {
             const product = state.find(item => item.id === action.payload);
             if (product) {
-                product.qty += 1;
+                product.qty = (product.qty || 0) + 1;
             }
         },
         decreaseQty: (state, action: PayloadAction<number>) => {
             const product = state.find(item => item.id === action.payload);
-            if (product && product.qty > 1) {
+            if (product && product.qty && product.qty > 1) {
                 product.qty -= 1;
-            }
-            else if (
-                product && product.qty === 1 &&
-                window.confirm('Do you want to remove this product from the cart?')
-            ) {
+            } else if (product && product.qty === 1 && window.confirm('Do you want to remove this product from the cart?')) {
                 state.splice(state.indexOf(product), 1);
             }
         },
     },
 });
+
 export const getTotalPrice = (state: elData[]) => {
-    return state.reduce((total, item) => total + item.price * item.qty, 0);
+    return state.reduce((total, item) => total + item.price * (item.qty || 1), 0);
 };
+
 export const { addProduct, removeProduct, deleteProduct, increaseQty, decreaseQty } = shopCardSlice.actions;
 export default shopCardSlice.reducer;

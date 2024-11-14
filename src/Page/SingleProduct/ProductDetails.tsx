@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 interface ProductProps {
@@ -28,6 +28,10 @@ const ProductDetails: React.FC<ProductProps> = ({
 }) => {
   const [currentImage, setCurrentImage] = useState(productImage);
   const [fade, setFade] = useState(false);
+
+  useEffect(() => {
+    setCurrentImage(productImage);
+  }, [productImage]);
 
   const handleImageClick = (image: string) => {
     setFade(true);

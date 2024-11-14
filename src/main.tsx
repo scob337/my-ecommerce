@@ -9,6 +9,7 @@ import store from './RTK/store.ts'
 import ProductPage from './Page/SingleProduct/ProductPage.tsx'
 import ShoppingCart from './Page/ShoppingCart/ShoppingCart.tsx'
 import CheckOut from './Page/Home/CheckOut/CheckOut.tsx'
+import WishList from './Page/WishList/WishList.tsx'
 const route = createBrowserRouter([
   {
     path: '/',
@@ -25,6 +26,10 @@ const route = createBrowserRouter([
       {
         path: '/shopping',
         element: <ShoppingCart />,
+      },
+      {
+        path: '/wishlist',
+        element: <WishList />,
       },
       {
         path: '/checkout',
