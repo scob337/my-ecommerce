@@ -23,6 +23,7 @@ const LinksData: ILinks[] = [
 // Component to display the navigation links
 export const Links = () => {
     const location = useLocation();
+
     const shopCard = useSelector((state: RootState) => state.ShopCard);
 
     return (
@@ -68,8 +69,11 @@ export const IconNav = () => {
                 <FaSearch size={20} />
             </li>
 
-            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500">
+            <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500 relative ">
                 <FaRegHeart size={20} />
+                <span className="absolute top-[-19px] right-[-5px] bg-black text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                    {shopCard.length}
+                </span>
             </li>
 
             <li className="font-bold cursor-pointer transition-all duration-500 ease-in-out hover:text-red-500">
