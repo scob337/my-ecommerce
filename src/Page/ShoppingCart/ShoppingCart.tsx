@@ -23,6 +23,8 @@ const ShoppingCart: React.FC = () => {
 									</tr>
 								</thead>
 								<tbody>
+
+									
 									<CartItem
 										title="Chain Bucket Bag"
 										price={150}

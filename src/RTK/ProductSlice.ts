@@ -4,9 +4,9 @@ interface IProduct {
     id: number;
     img: string;
     desc: string;
-    title:string;
+    title: string;
     rate: string;
-    price: string;
+    price: number;
     category: string;
     imgCollection: string[]
 }
@@ -16,7 +16,7 @@ const initialState: IProduct = {
     img: "",
     desc: "",
     rate: "",
-    price: "",
+    price: 0,
     category: "",
     title: "",
     imgCollection: []
@@ -26,15 +26,8 @@ const productSlice = createSlice({
     name: 'getProduct',
     initialState,
     reducers: {
-        GetProduct: (state, action: PayloadAction<IProduct>) => {
-            state.id = action.payload.id
-            state.img = action.payload.img
-            state.desc = action.payload.desc
-            state.rate = action.payload.rate
-            state.price = action.payload.price
-            state.category = action.payload.category
-            state.title = action.payload.title
-            state.imgCollection = action.payload.imgCollection
+        GetProduct: (_, action: PayloadAction<IProduct>) => {
+            return action.payload;
         }
     },
 })
