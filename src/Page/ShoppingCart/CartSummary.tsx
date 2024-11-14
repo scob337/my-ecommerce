@@ -1,5 +1,6 @@
 // CartSummary.tsx
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 interface CartSummaryProps {
     total: number;
@@ -14,8 +15,8 @@ const CartSummary: React.FC<CartSummaryProps> = ({ total }) => {
                 <span>Total</span>
                 <span>${total.toFixed(2)}</span>
             </div>
-            <button className="bg-red-500 text-white w-full py-2 rounded mt-4">
-                Proceed to Checkout
+            <button  className="bg-red-500 text-white w-full py-2 rounded mt-4">
+                <NavLink to="/checkout">Proceed to Checkout</NavLink>
             </button>
         </div>
     );

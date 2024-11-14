@@ -5,7 +5,7 @@ export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <section className='fixed bg-white z-50 w-full'>
+        <section className='sticky top-0 bg-white z-50 w-full'>
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
                 <article className="max-w-screen-xl flex flex-col lg:flex-row items-center justify-between mx-auto p-4">
                     <article className="logo lg:w-[20vw] flex justify-between items-center w-full">

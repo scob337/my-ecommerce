@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import store from './RTK/store.ts'
 import ProductPage from './Page/SingleProduct/ProductPage.tsx'
 import ShoppingCart from './Page/ShoppingCart/ShoppingCart.tsx'
+import CheckOut from './Page/Home/CheckOut/CheckOut.tsx'
 const route = createBrowserRouter([
   {
     path: '/',
@@ -25,6 +26,11 @@ const route = createBrowserRouter([
         path: '/shopping',
         element: <ShoppingCart />,
       },
+      {
+        path: '/checkout',
+        element: <CheckOut />,
+      },
+      
     ]
   },
 ])
