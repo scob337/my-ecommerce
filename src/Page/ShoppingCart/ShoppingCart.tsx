@@ -3,8 +3,12 @@ import React from "react";
 import CartItem from "./CartItem";
 import CouponCode from "./CouponCode";
 import CartSummary from "./CartSummary";
-
+import { useSelector } from "react-redux";
+import { RootState } from "../../RTK/store";
+import { elData, getTotalPrice } from '../../RTK/ShopCardSlice'
 const ShoppingCart: React.FC = () => {
+	const ShopCard = useSelector((state: RootState) => state.ShopCard)
+	const totalPrice = getTotalPrice(ShopCard);
 	return (
 		<div className="container mx-auto p-6 w-full">
 			<h2 className="text-2xl font-bold mb-4">Shopping Cart</h2>
@@ -24,13 +28,18 @@ const ShoppingCart: React.FC = () => {
 								</thead>
 								<tbody>
 
-									
-									<CartItem
-										title="Chain Bucket Bag"
-										price={150}
-										quantity={2}
-										image="https://preview.colorlib.com/theme/ashion/img/shop-cart/cp-1.jpg"
-									/>
+									{ShopCard ? ShopCard.map((product: elData) => {
+										return (
+											<CartItem
+												key={product.id}
+												id={product.id}
+												title={product.title}
+												price={product.price}
+												quantity={product.qty}
+												image={product.img}
+											/>
+										);
+									}) : null}
 								</tbody>
 							</table>
 						</div>
@@ -47,7 +56,7 @@ const ShoppingCart: React.FC = () => {
 
 							<div className="flex flex-col md:flex-row justify-between w-full mt-4 gap-4">
 								<CouponCode />
-								<CartSummary subtotal={750} total={750} />
+								<CartSummary total={totalPrice} />
 							</div>
 						</div>
 					</div>

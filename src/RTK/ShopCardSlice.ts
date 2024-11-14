@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface elData {
+export interface elData {
     id: number;
     img: string;
     title: string;
@@ -41,13 +41,29 @@ const shopCardSlice = createSlice({
         },
         deleteProduct: (state, action: PayloadAction<number>) => {
             return state.filter(item => item.id !== action.payload);
-        }
+        },
+        increaseQty: (state, action: PayloadAction<number>) => {
+            const product = state.find(item => item.id === action.payload);
+            if (product) {
+                product.qty += 1;
+            }
+        },
+        decreaseQty: (state, action: PayloadAction<number>) => {
+            const product = state.find(item => item.id === action.payload);
+            if (product && product.qty > 1) {
+                product.qty -= 1;
+            }
+            else if (
+                product && product.qty === 1 &&
+                window.confirm('Do you want to remove this product from the cart?')
+            ) {
+                state.splice(state.indexOf(product), 1);
+            }
+        },
     },
 });
-
 export const getTotalPrice = (state: elData[]) => {
     return state.reduce((total, item) => total + item.price * item.qty, 0);
 };
-
-export const { addProduct, removeProduct, deleteProduct } = shopCardSlice.actions;
+export const { addProduct, removeProduct, deleteProduct, increaseQty, decreaseQty } = shopCardSlice.actions;
 export default shopCardSlice.reducer;

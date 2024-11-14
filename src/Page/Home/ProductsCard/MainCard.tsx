@@ -2,10 +2,9 @@ import { Products } from './ProductsData';
 import { LuMaximize2 } from "react-icons/lu";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { GetProduct } from '../../../RTK/ProductSlice';
 import { addProduct } from '../../../RTK/ShopCardSlice';
-import { RootState } from '../../../RTK/store';
 
 interface elData {
     id: number;
@@ -31,8 +30,6 @@ export default function MainCard({ FilterValue = { title: "All", category: "All"
     const handleAddToCart = (item: elData) => {
         dispatch(addProduct(item));
     };
-    const ShopCard = useSelector((state: RootState) => state.ShopCard)
-    console.log(ShopCard)
     const visibleProducts = Products.filter((el: elData) =>
         FilterValue?.title === "All" || FilterValue?.category === el.category
     );
